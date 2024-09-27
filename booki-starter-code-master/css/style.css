@@ -77,35 +77,52 @@ a {
 }
 
 .hebergements-cards {
-    display: flex;
-    flex-wrap: wrap;
+    /* width: 33%; */
+    display: grid;
+    /* flex-wrap: wrap; */
+    grid-template-columns: repeat(3, 1fr); /* Grid permet d'avoir un alignement plus rapide que flex */
+    grid-gap: 30px;
     margin-top: 33px;
-    margin-bottom: 15px;
 }
-/* Trouver comment avoir les articles alignés correctement, et responsive */
 
-.hebergements-cards img {
+.hebergements-cards img { 
     width: 100%;
+    max-height: 120px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    object-fit: cover; /* Object : Pour que les photos apparaissent non écrasées */
+    object-position: center; 
 }
 
 .hebergements-cards .card-title {
-    margin-top: 10px;
-    margin-bottom: 4px;
+    margin: 0;
+    margin-top: 8px;
+    white-space: nowrap;
+    
+    /* margin-bottom: 4px; */
 }
 
 .hebergements-cards .card-rating {
     margin-bottom: 5px;
 }
 
-.hebergements-cards .card-content {
+.hebergements-cards .card-content { 
     width: 67%;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+}
+
+.hebergements-cards .card-subtitle {
+    margin: 8px 0;
+}
+
+.show-more {
+    margin: 0;
+    margin-top: auto;
+    font-size: 18px;
 }
 
 /****** Populaires ***********/
@@ -129,6 +146,8 @@ a {
     height: 136px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .populaires-cards .card-content {
