@@ -1,6 +1,7 @@
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
 
 :root {
@@ -14,6 +15,7 @@
 }
 
 body {
+    margin: 0;
     display: flex;
     justify-content: center;
 }
@@ -44,11 +46,18 @@ a {
 
 .card-img {
     object-fit: cover;
+    /* Cette classe n'apparaît pas dans le code html, 
+    et l'ajouter comme la masquer ne change pas l'apparence du site. 
+    En l'état elle semble ne servir à rien */
 }
 
 .card-title {
     font-size: 16px;
-} 
+}
+
+.card-subtitle {
+    font-size: 14px;
+}
 
 .euro {
     font-weight: 700;
@@ -58,13 +67,183 @@ a {
     color: var(--main-bg-color)
 }
 
+/****** Header ***********/
+
+.logo-liens {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding: 0 0px 30px 0px;
+}
+
+.logo {
+    width: 61px;
+    /* height: 24px; */
+    margin: 0;
+    padding-top: 30px;
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 16px;
+    gap: 68px;
+    margin: 0;
+    
+}
+
+.nav-link {
+    margin: 0;
+    padding-top: 16px;
+    border-top: 2px solid transparent;
+    height: 100%;
+}
+
+/* nav>a:hover {
+    color: #0065FC;
+} */
+
+.nav-link.active, .nav-link:hover {
+    /* Indique que la barre bleue apparaît quand les liens sont actifs et quand la souris passe dessus */
+    color: #0065FC;
+    border-top: 2px solid #0065FC;
+}
+
+.title {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.accroche {
+    font-size: 16px;
+    margin: 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 30px;
+}
+
+form>div {
+    width: 50px;
+    height: 100%;
+    border-radius: 15px 0 0 15px;
+    background-color: #F2F2F2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    width: 100%;
+    max-width: 195px;
+    height: 50px;
+    background-color: white;
+    border: 0px;
+    border: 1px solid #F2F2F2;
+    padding: 0 0 0 10px;
+    font-size: 18px;
+    outline: none;
+    font-weight: 700;
+}
+
+
+.submit {
+    width: 132px;
+    height: 50px;
+    background-color: #0065FC;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 0 15px 15px 0;
+    border: none;
+    cursor: pointer;
+    /* Pour indiquer une main par-dessus le bouton Rechercher */
+}
+
+form>div>.fa-solid {
+    color: black;
+}
+/*  Ajouter > quand on veut modifier une classe dans une classe
+pour éviter que toutes les classes identiques soient impactées.
+Pas indispensable mais recommandé.
+À utiliser seulement pour une classe DANS une autre classe. */
+
+.filtres {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.filtres>p {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* cursor: pointer; */
+    background-color: white;
+    height: 50px;
+    border: 2px solid #d9d9d9;
+    border-radius: 25px;
+    padding: 4px 19px 4px 19px;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+button:hover {
+    background-color: #DEEBFF;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.info>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #D9D9D9;
+    border-radius: 50%;
+}
+
+.info>div>.fa-solid {
+    font-size: 10px;
+}
+
+
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
     display: flex;
     justify-content: space-between;
 }
 
-.hebergements-and-populaires section {
+.hebergements-and-populaires>section {
     background-color: var(--main-bg-color);
     border-radius: 20px;
     padding: 30px;
@@ -80,25 +259,27 @@ a {
     /* width: 33%; */
     display: grid;
     /* flex-wrap: wrap; */
-    grid-template-columns: repeat(3, 1fr); /* Grid permet d'avoir un alignement plus rapide que flex */
+    grid-template-columns: repeat(3, 1fr);
+    /* Grid permet d'avoir un alignement plus rapide que flex */
     grid-gap: 30px;
     margin-top: 33px;
 }
 
-.hebergements-cards img { 
+.hebergements-cards img {
     width: 100%;
     max-height: 120px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    object-fit: cover; /* Object : Pour que les photos apparaissent non écrasées */
-    object-position: center; 
+    object-fit: cover;
+    /* Object-fit : Pour que les photos apparaissent non écrasées */
+    object-position: center;
 }
 
 .hebergements-cards .card-title {
     margin: 0;
-    margin-top: 8px;
+    margin-top: 5px;
     white-space: nowrap;
-    
+
     /* margin-bottom: 4px; */
 }
 
@@ -106,7 +287,7 @@ a {
     margin-bottom: 5px;
 }
 
-.hebergements-cards .card-content { 
+.hebergements-cards .card-content {
     width: 67%;
     padding-left: 15px;
     display: flex;
@@ -172,6 +353,76 @@ a {
     margin-bottom: 5px;
 }
 
+/****** Activités ***********/
+
+.activites .section-title {
+    padding: 60px 0px 30px 30px;
+}
+
+.activites-card {
+    /* La mise en page se casse si je change le nom de la classe
+    (alors que le nom est le même sur html et css) */
+    display: flex;
+    gap: 30px;
+}
+
+.card-activites {
+    width: 100%;
+    height: 429px;
+    /* height: normalement la taille est de 439px,
+    mais j'ai un décalage de 10px sur le site, je ne sais pas pourquoi */
+
+    background-color: white;
+    border-radius: 20px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+    margin-bottom: 60px;
+}
+
+.activites-card img {
+    width: 100%;
+    height: 87%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+
+.h3-activites {
+    font-size: 16px;
+    padding-left: 10px;
+
+}
+
+/* Faire une classe spécifique pour le texte, pour l'aligner correctement ? */
+
+
+
+/********** Footer ***********/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    /* Pour placer les catégories sur la même ligne */
+    background-color: var(--main-bg-color);
+    /* Le gris est plus foncé que sur les autres parties, alors que c'est la même couleur ? */
+    padding-left: 20px;
+}
+
+.footer-section {
+    width: 33%;
+    gap: 30px;
+}
+
+.h3-footer {
+    line-height: 10px;
+    margin: 30px 0px 10px 0px;
+}
+
+.p-footer {
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    /* Pour mettre les textes à la ligne. Tester de les placer en liste ? */
+}
 
 
 

@@ -16,51 +16,57 @@
 
 <body>
     <div class="main-container">
+
         <header>
-            <div>
-                <img src="./images/logo/Booki.png" alt="Logo de Booki">
+            <div class="logo-liens">
+                <img class="logo" src="./images/logo/Booki.png" alt="Logo de Booki">
                 <nav>
-                    <a href="#hebergements">Hébergements</a>
-                    <a href="#activites">Activités</a>
+                    <a href="#hebergements" class="nav-link active">Hébergements</a>
+                    <a href="#activites" class="nav-link">Activités</a>
                 </nav>
             </div>
 
-            <div>
+            <div class="title">
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
-                <p>En plein centre-ville ou en pleine nature</p>
+                <p class="accroche">En plein centre-ville ou en pleine nature</p>
             </div>
 
             <form>
-                <i class="fa-solid fa-location-dot"></i>
-                <input type="text" name="text" class="search" placeholder="Écrivez ici">
+                <div>
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <!-- Value : Pour indiquer la valeur par défaut. Placeholer : texte d'exemple quand il n'y a pas de valeur -->
+                <input value="Marseille, France" type="text" name="text" class="search" placeholder="Marseille, France">
                 <input type="submit" name="submit" class="submit" value="Rechercher">
             </form>
 
-            <div>
+            <div class="filtres">
                 <p>Filtres</p>
-                <button class="filtres">
+                <button>
                     <i class="fa-solid fa-money-bill-wave"></i>
                     <p>Économique</p>
                 </button>
 
-                <button class="filtres">
+                <button>
                     <i class="fa-solid fa-person"></i>
                     <p>Familial</p>
                 </button>
 
-                <button class="filtres">
+                <button>
                     <i class="fa-solid fa-heart"></i>
                     <p>Romantique</p>
                 </button>
 
-                <button class="filtres">
+                <button>
                     <i class="fa-solid fa-fire"></i>
                     <p>Nos pépites</p>
                 </button>
             </div>
 
-            <div>
-                <i class="fa-solid fa-info"></i>
+            <div class="info">
+                <div>
+                    <i class="fa-solid fa-info"></i>
+                </div>
                 <p>Plus de 500 logements sont disponibles dans cette ville</p>
             </div>
 
@@ -184,7 +190,7 @@
                         </a>
 
                         <h2 class="show-more">Afficher plus</h2>
-                        
+
                     </div>
 
                 </section>
@@ -262,49 +268,65 @@
             <section class="activites" id="activites">
                 <h2 class="section-title">Activités à Marseille</h2>
 
-                <article>
-                    <img src="./images/activites/reno-laithienne.jpg" alt="Photo du Vieux-Port de Marseille">
-                    <h3>Vieux-Port</h3>
-                </article>
+                <div class="activites-card">
 
-                <article>
+                    <article class="card-activites">
+                    <img clas src="./images/activites/reno-laithienne.jpg" alt="Photo du Vieux-Port de Marseille">
+                    <h3 class="h3-activites">Vieux-Port</h3>
+                </article>
+               
+
+               
+                    <article class="card-activites">
                     <img src="./images/activites/paul-hermann.jpg" alt="Photo du Fort de Pomègues">
-                    <h3>Fort de Pomègues</h3>
+                    <h3 class="h3-activites">Fort de Pomègues</h3>
                 </article>
+          
 
-                <article>
+            
+                <article class="card-activites">
                     <img src="./images/activites/kilyan-sockalingum.jpg" alt="Photo du Parc national des Calanques">
-                    <h3>Parc national des Calanques</h3>
+                    <h3 class="h3-activites">Parc national des Calanques</h3>
+                </article>
+        
+
+            
+                <article class="card-activites">
+                    <img src="./images/activites/florian-wehde.jpg" alt="Photo de Notre-Dame-de-la-Garde">
+                    <h3 class="h3-activites">Notre-Dame-de-la-Garde</h3>
                 </article>
 
-                <article>
-                    <img src="./images/activites/florian-wehde.jpg" alt="Photo de Notre-Dame-de-la-Garde">
-                    <h3>Notre-Dame-de-la-Garde</h3>
-                </article>
+            </div>
 
             </section>
 
         </main>
 
-        <footer>
+        <footer> <!-- Tester des listes dans une seule section ? -->
 
-            <section>
-                <h3>À propos</h3>
-                <a href="#">Fonctionnement du site</a>
-                <a href="#">Conditions générales</a>
-                <a href="#">Données et confidentialité</a>
+            <section class="footer-section">
+                <h3 class="h3-footer">À propos</h3>
+                <p class="p-footer">
+                    <a href="#">Fonctionnement du site</a>
+                    <a href="#">Conditions générales</a>
+                    <a href="#">Données et confidentialité</a>
+                </p>
             </section>
 
-            <section>
-                <h3>Nos hébergements</h3>
-                <a href="#">Charte qualité</a>
-                <a href="#">Proposer votre hôtel</a>
+            <section class="footer-section">
+                <h3 class="h3-footer">Nos hébergements</h3>
+                <p class="p-footer">
+                    <a href="#">Charte qualité</a>
+                    <a href="#">Proposer votre hôtel</a>
+                </p>
             </section>
 
-            <section>
-                <h3>Assistance</h3>
-                <a href="#">Centre d’aide</a>
-                <a href="#">Nous contacter</a>
+            <section class="footer-section">
+                <h3 class="h3-footer">Assistance</h3>
+                <p class="p-footer">
+                    <a href="#">Centre d’aide</a>
+                    <a href="#">Nous contacter</a>
+                </p>
             </section>
 
         </footer>
