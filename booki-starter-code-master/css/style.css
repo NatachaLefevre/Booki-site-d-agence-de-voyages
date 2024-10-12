@@ -23,6 +23,7 @@ body {
 .main-container {
     width: 100%;
     max-width: 1440px;
+    min-width: 1024px;
     padding: 0 50px;
     box-sizing: border-box;
 }
@@ -182,7 +183,9 @@ Pas indispensable mais recommandé.
 
 .filtres {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    /* Pour que les boutons aillent à la ligne et ne soient pas déformés */
+    /* flex-direction: row; */
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
@@ -246,7 +249,7 @@ button:hover {
 .hebergements-and-populaires>section {
     background-color: var(--main-bg-color);
     border-radius: 20px;
-    padding: 30px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -255,19 +258,28 @@ button:hover {
     width: 65%;
 }
 
+.hebergements .section-title {
+    padding: 10px 0 0 10px;
+}
+
 .hebergements-cards {
     /* width: 33%; */
     display: grid;
     /* flex-wrap: wrap; */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 2fr);
     /* Grid permet d'avoir un alignement plus rapide que flex */
-    grid-gap: 30px;
-    margin-top: 33px;
+    grid-gap: 1rem;
+    /* Gap en rem ou em permet de conserver les proportions */
+    margin-top: 30px;
+}
+
+.hebergements-cards .card {
+    margin: 7px;
 }
 
 .hebergements-cards img {
     width: 100%;
-    max-height: 120px;
+    height: 115px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     object-fit: cover;
@@ -278,18 +290,22 @@ button:hover {
 .hebergements-cards .card-title {
     margin: 0;
     margin-top: 5px;
-    white-space: nowrap;
-
-    /* margin-bottom: 4px; */
+    white-space: wrap; /* Permet d'avoir les cartes à la même largeur */
+    margin-bottom: 4px;
+    font-size: 1rem;
 }
+
+
 
 .hebergements-cards .card-rating {
     margin-bottom: 5px;
+    font-size:14px;
 }
 
 .hebergements-cards .card-content {
-    width: 67%;
-    padding-left: 15px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -297,12 +313,12 @@ button:hover {
 }
 
 .hebergements-cards .card-subtitle {
-    margin: 8px 0;
+    max-width: 100%;
+    margin: 5px 0 8px 0;
 }
 
 .show-more {
-    margin: 0;
-    margin-top: auto;
+    margin: 0 0 10px 10px;
     font-size: 18px;
 }
 
@@ -333,7 +349,7 @@ button:hover {
 
 .populaires-cards .card-content {
     width: 67%;
-    padding-left: 15px;
+    padding: 0 10px 0 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -356,7 +372,7 @@ button:hover {
 /****** Activités ***********/
 
 .activites .section-title {
-    padding: 60px 0px 30px 30px;
+    padding: 60px 0px 30px 0px;
 }
 
 .activites-card {
@@ -368,10 +384,7 @@ button:hover {
 
 .card-activites {
     width: 100%;
-    height: 429px;
-    /* height: normalement la taille est de 439px,
-    mais j'ai un décalage de 10px sur le site, je ne sais pas pourquoi */
-
+    height: 439px;
     background-color: white;
     border-radius: 20px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
@@ -380,19 +393,22 @@ button:hover {
 
 .activites-card img {
     width: 100%;
-    height: 87%;
+    height: 380px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     object-fit: cover;
 }
 
-.h3-activites {
-    font-size: 16px;
-    padding-left: 10px;
-
+.activites .card-title {
+    padding-left: 20px;
 }
 
-/* Faire une classe spécifique pour le texte, pour l'aligner correctement ? */
+.h3-activites {
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+}
 
 
 
@@ -430,9 +446,12 @@ footer {
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width: 1024px) {
+@media (max-width:1024px) { 
+    /* La valeur maxi (1440) pour le desktop est précisée dans .main-container */
+
     .hebergements-and-populaires {
         flex-direction: column;
+        background-color: red;
     }
 
     .hebergements {
@@ -465,5 +484,11 @@ footer {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
+
+    .hebergements-and-populaires {
+        flex-direction: column;
+        background-color: blue;
+    }
+
     /* ... */
 }
