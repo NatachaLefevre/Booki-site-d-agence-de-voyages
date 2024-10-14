@@ -23,7 +23,7 @@ body {
 .main-container {
     width: 100%;
     max-width: 1440px;
-    min-width: 1024px;
+    /* min-width: 1024px; */
     padding: 0 50px;
     box-sizing: border-box;
 }
@@ -195,6 +195,13 @@ Pas indispensable mais recommandé.
 .filtres>p {
     font-size: 18px;
     font-weight: 700;
+}
+
+.filtres-boutons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 button {
@@ -449,9 +456,16 @@ footer {
 @media (max-width:1024px) { 
     /* La valeur maxi (1440) pour le desktop est précisée dans .main-container */
 
+    .filtres>p {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
-        background-color: red;
+        /* background-color: red; */
     }
 
     .hebergements {
@@ -479,6 +493,14 @@ footer {
 
     .populaires-cards .card-subtitle {
         font-size: 13px;
+    }
+
+    .card-activites {
+        height: 270px;
+    }
+
+    .card-activites img {
+        height: 200px;
     }
 }
 
