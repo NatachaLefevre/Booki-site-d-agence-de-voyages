@@ -173,6 +173,10 @@ form>div {
     /* Pour indiquer une main par-dessus le bouton Rechercher */
 }
 
+form>.fa-solid {
+    display: none;
+}
+
 form>div>.fa-solid {
     color: black;
 }
@@ -202,6 +206,10 @@ Pas indispensable mais recommandé.
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
+}
+
+.filtres-boutons>p {
+    font-size: 17px;
 }
 
 button {
@@ -302,8 +310,6 @@ button:hover {
     font-size: 1rem;
 }
 
-
-
 .hebergements-cards .card-rating {
     margin-bottom: 5px;
     font-size:14px;
@@ -378,6 +384,13 @@ button:hover {
 
 /****** Activités ***********/
 
+.h3-activites {
+    height: 50px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
 .activites .section-title {
     padding: 60px 0px 30px 0px;
 }
@@ -409,14 +422,6 @@ button:hover {
 .activites .card-title {
     padding-left: 20px;
 }
-
-.h3-activites {
-    height: 50px;
-    display: table-cell;
-    vertical-align: middle;
-    font-size: 16px;
-}
-
 
 
 /********** Footer ***********/
@@ -463,6 +468,10 @@ footer {
         margin: 0;
     }
 
+    button>p {
+        font-size: 16px;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
         /* background-color: red; */
@@ -507,10 +516,152 @@ footer {
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
 
-    .hebergements-and-populaires {
+    /* Header */
+
+    header {
+        width: 100%;
+        display: flex;
         flex-direction: column;
-        background-color: blue;
+        justify-content: center;
+    } 
+
+    .logo-liens {
+        display: flex;
+        flex-direction: column;
     }
 
-    /* ... */
+    .logo {
+        display: block;
+        margin: 0px auto;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 20px 0 0 0;
+        gap: 0;      
+    }
+
+    .nav-link, .nav-link.active, .nav-link:hover {
+        width: 100%;
+        text-align: center;
+        border-top: none;
+        padding-bottom: 15px;
+    }
+
+    .nav-link.active, .nav-link:hover {
+        border-bottom: 2px solid #0065FC;
+        color: #0065FC;
+    }
+
+    .nav-link {
+        border-bottom: 2px solid #F2F2F2;
+    }
+
+    form {
+        justify-content: center;
+    }
+ 
+    .submit {
+        display: none;
+    }
+
+    form>.fa-solid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: #0065FC;
+        color: white;
+        font-size: 17px;
+        font-weight: 700;
+        border-radius: 15px;
+        cursor: pointer;
+        filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.2));
+    }
+
+    .filtres-boutons {
+        justify-content: center;
+    }
+
+    button {
+        width:162.5px;
+    }
+
+    button>p {
+        font-size: 14px;
+    }
+
+    .fa-info {
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hébergements et Populaires */
+
+    .hebergements-and-populaires {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .hebergements-and-populaires>section {
+        border-radius: 0;
+    }
+    
+    #hebergements {
+        background-color: white;
+    }
+
+    .hebergements-cards {
+        margin-top: 10px;
+        gap: 0;
+    }
+
+    .populaires {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .populaires-cards .card {
+        display: flex;
+        margin-top: 15px;
+    }
+
+   .populaires-cards {
+        width: 100%;
+        flex-direction: column;
+   }
+
+   .populaires-cards a {
+        width: 100%;
+    }
+
+    .hebergements-cards {
+        grid-template-columns: repeat(1, 6fr);
+    }
+
+    /* Activités */
+
+    .activites-card {
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+
+    .card-activites {
+        margin-bottom: 0;
+    }
+
+    /* Footer */
+
+    footer {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+    
 }
