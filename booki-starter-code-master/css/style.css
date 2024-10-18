@@ -23,7 +23,6 @@ body {
 .main-container {
     width: 100%;
     max-width: 1440px;
-    /* min-width: 1024px; */
     padding: 0 50px;
     box-sizing: border-box;
 }
@@ -43,13 +42,6 @@ a {
     border-radius: 20px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
-}
-
-.card-img {
-    object-fit: cover;
-    /* Cette classe n'apparaît pas dans le code html, 
-    et l'ajouter comme la masquer ne change pas l'apparence du site. 
-    En l'état elle semble ne servir à rien */
 }
 
 .card-title {
@@ -72,14 +64,12 @@ a {
 
 .logo-liens {
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     padding: 0 0px 30px 0px;
 }
 
 .logo {
     width: 61px;
-    /* height: 24px; */
     margin: 0;
     padding-top: 30px;
 }
@@ -93,7 +83,7 @@ nav {
     font-size: 16px;
     gap: 68px;
     margin: 0;
-    
+
 }
 
 .nav-link {
@@ -103,11 +93,8 @@ nav {
     height: 100%;
 }
 
-/* nav>a:hover {
-    color: #0065FC;
-} */
-
-.nav-link.active, .nav-link:hover {
+.nav-link.active,
+.nav-link:hover {
     /* Indique que la barre bleue apparaît quand les liens sont actifs et quand la souris passe dessus */
     color: #0065FC;
     border-top: 2px solid #0065FC;
@@ -180,6 +167,7 @@ form>.fa-solid {
 form>div>.fa-solid {
     color: black;
 }
+
 /*  Ajouter > quand on veut modifier une classe dans une classe
 pour éviter que toutes les classes identiques soient impactées.
 Pas indispensable mais recommandé.
@@ -189,14 +177,14 @@ Pas indispensable mais recommandé.
     display: flex;
     flex-wrap: wrap;
     /* Pour que les boutons aillent à la ligne et ne soient pas déformés */
-    /* flex-direction: row; */
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
+
     gap: 15px;
 }
 
-.filtres>p {
+.filtres>span {
     font-size: 18px;
     font-weight: 700;
 }
@@ -208,7 +196,7 @@ Pas indispensable mais recommandé.
     gap: 15px;
 }
 
-.filtres-boutons>p {
+.filtres-boutons>span {
     font-size: 17px;
 }
 
@@ -216,7 +204,6 @@ button {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* cursor: pointer; */
     background-color: white;
     height: 50px;
     border: 2px solid #d9d9d9;
@@ -278,9 +265,7 @@ button:hover {
 }
 
 .hebergements-cards {
-    /* width: 33%; */
     display: grid;
-    /* flex-wrap: wrap; */
     grid-template-columns: repeat(3, 2fr);
     /* Grid permet d'avoir un alignement plus rapide que flex */
     grid-gap: 1rem;
@@ -305,14 +290,15 @@ button:hover {
 .hebergements-cards .card-title {
     margin: 0;
     margin-top: 5px;
-    white-space: wrap; /* Permet d'avoir les cartes à la même largeur */
+    white-space: wrap;
+    /* Permet d'avoir les cartes à la même largeur */
     margin-bottom: 4px;
     font-size: 1rem;
 }
 
 .hebergements-cards .card-rating {
     margin-bottom: 5px;
-    font-size:14px;
+    font-size: 14px;
 }
 
 .hebergements-cards .card-content {
@@ -396,8 +382,6 @@ button:hover {
 }
 
 .activites-card {
-    /* La mise en page se casse si je change le nom de la classe
-    (alors que le nom est le même sur html et css) */
     display: flex;
     gap: 30px;
 }
@@ -431,7 +415,6 @@ footer {
     flex-direction: row;
     /* Pour placer les catégories sur la même ligne */
     background-color: var(--main-bg-color);
-    /* Le gris est plus foncé que sur les autres parties, alors que c'est la même couleur ? */
     padding-left: 20px;
 }
 
@@ -449,7 +432,6 @@ footer {
     display: flex;
     flex-direction: column;
     line-height: 30px;
-    /* Pour mettre les textes à la ligne. Tester de les placer en liste ? */
 }
 
 
@@ -458,7 +440,7 @@ footer {
 
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
-@media (max-width:1024px) { 
+@media (max-width:1024px) {
     /* La valeur maxi (1440) pour le desktop est précisée dans .main-container */
 
     .filtres>p {
@@ -468,13 +450,12 @@ footer {
         margin: 0;
     }
 
-    button>p {
+    button>span {
         font-size: 16px;
     }
 
     .hebergements-and-populaires {
         flex-direction: column;
-        /* background-color: red; */
     }
 
     .hebergements {
@@ -523,7 +504,7 @@ footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
-    } 
+    }
 
     .logo-liens {
         display: flex;
@@ -539,17 +520,20 @@ footer {
         display: flex;
         flex-wrap: nowrap;
         margin: 20px 0 0 0;
-        gap: 0;      
+        gap: 0;
     }
 
-    .nav-link, .nav-link.active, .nav-link:hover {
+    .nav-link,
+    .nav-link.active,
+    .nav-link:hover {
         width: 100%;
         text-align: center;
         border-top: none;
         padding-bottom: 15px;
     }
 
-    .nav-link.active, .nav-link:hover {
+    .nav-link.active,
+    .nav-link:hover {
         border-bottom: 2px solid #0065FC;
         color: #0065FC;
     }
@@ -561,7 +545,7 @@ footer {
     form {
         justify-content: center;
     }
- 
+
     .submit {
         display: none;
     }
@@ -586,10 +570,10 @@ footer {
     }
 
     button {
-        width:162.5px;
+        width: 162.5px;
     }
 
-    button>p {
+    button>span {
         font-size: 14px;
     }
 
@@ -610,7 +594,7 @@ footer {
     .hebergements-and-populaires>section {
         border-radius: 0;
     }
-    
+
     #hebergements {
         background-color: white;
     }
@@ -630,12 +614,12 @@ footer {
         margin-top: 15px;
     }
 
-   .populaires-cards {
+    .populaires-cards {
         width: 100%;
         flex-direction: column;
-   }
+    }
 
-   .populaires-cards a {
+    .populaires-cards a {
         width: 100%;
     }
 
@@ -663,5 +647,5 @@ footer {
     .footer-section {
         width: 100%;
     }
-    
+
 }
