@@ -83,7 +83,6 @@ nav {
     font-size: 16px;
     gap: 68px;
     margin: 0;
-
 }
 
 .nav-link {
@@ -180,12 +179,11 @@ Pas indispensable mais recommandé.
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 20px;
-
     gap: 15px;
 }
 
 .filtres>span {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -194,10 +192,6 @@ Pas indispensable mais recommandé.
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
-}
-
-.filtres-boutons>span {
-    font-size: 17px;
 }
 
 button {
@@ -490,8 +484,9 @@ footer {
     }
 
     .card-activites img {
-        height: 200px;
+        height: 210px;
     }
+    
 }
 
 /* Small devices (phones, less than 768px) */
@@ -595,15 +590,6 @@ footer {
         border-radius: 0;
     }
 
-    #hebergements {
-        background-color: white;
-    }
-
-    .hebergements-cards {
-        margin-top: 10px;
-        gap: 0;
-    }
-
     .populaires {
         width: 100%;
         margin-top: 0;
@@ -621,6 +607,15 @@ footer {
 
     .populaires-cards a {
         width: 100%;
+    }
+    
+    #hebergements {
+        background-color: white;
+    }
+
+    .hebergements-cards {
+        margin-top: 10px;
+        gap: 0;
     }
 
     .hebergements-cards {
