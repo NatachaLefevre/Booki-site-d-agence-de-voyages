@@ -60,6 +60,10 @@ a {
     color: var(--main-bg-color)
 }
 
+h3 {
+    margin: 0;
+}
+
 /****** Header ***********/
 
 .logo-liens {
@@ -123,7 +127,7 @@ form {
 }
 
 form>div {
-    width: 50px;
+    min-width: 50px;
     height: 100%;
     border-radius: 15px 0 0 15px;
     background-color: #F2F2F2;
@@ -174,7 +178,7 @@ Pas indispensable mais recommandé.
 
 .filtres {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* Pour que les boutons aillent à la ligne et ne soient pas déformés */
     justify-content: flex-start;
     align-items: center;
@@ -187,11 +191,10 @@ Pas indispensable mais recommandé.
     font-weight: 700;
 }
 
-.filtres-boutons {
+.filtres-boutons, .filtres-boutons-1, .filtres-boutons-2 {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
 }
 
 button {
@@ -437,11 +440,10 @@ footer {
 @media (max-width:1024px) {
     /* La valeur maxi (1440) pour le desktop est précisée dans .main-container */
 
-    .filtres>p {
-        display: flex;
+    .filtres {
         flex-direction: column;
         align-items: flex-start;
-        margin: 0;
+        margin-bottom: 10px;
     }
 
     button>span {
@@ -486,11 +488,15 @@ footer {
     .card-activites img {
         height: 210px;
     }
-    
+
 }
 
 /* Small devices (phones, less than 768px) */
-@media (max-width: 767.98px) {
+@media (max-width: 767px) {
+
+    .main-container {
+        padding: 0;
+    }
 
     /* Header */
 
@@ -537,8 +543,16 @@ footer {
         border-bottom: 2px solid #F2F2F2;
     }
 
-    form {
-        justify-content: center;
+    h1,
+    .accroche,
+    form,
+    .filtres>h3,
+    .info {
+        padding: 0 30px;
+    }
+
+    .search {
+        max-width: none;
     }
 
     .submit {
@@ -549,8 +563,8 @@ footer {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
         height: 50px;
+        min-width: 50px;
         background-color: #0065FC;
         color: white;
         font-size: 17px;
@@ -560,16 +574,32 @@ footer {
         filter: drop-shadow(0px 5px 3px rgba(0, 0, 0, 0.2));
     }
 
+    .filtres {
+        display: flex;
+        align-items: stretch;
+    }
+
     .filtres-boutons {
+        flex-wrap: wrap;
         justify-content: center;
+        padding: 0 50px;
+        gap: 10px;
+    }
+
+    .filtres-boutons-1, .filtres-boutons-2 {
+        flex-direction: row;
     }
 
     button {
-        width: 162.5px;
+        width: 190px;
     }
 
     button>span {
         font-size: 14px;
+    }
+
+    .info {
+        margin-top: 10px;
     }
 
     .fa-info {
@@ -608,7 +638,7 @@ footer {
     .populaires-cards a {
         width: 100%;
     }
-    
+
     #hebergements {
         background-color: white;
     }
@@ -623,6 +653,10 @@ footer {
     }
 
     /* Activités */
+
+    .activites {
+        padding: 0 30px;
+    }
 
     .activites-card {
         flex-direction: column;
