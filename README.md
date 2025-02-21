@@ -1,2 +1,1 @@
-# OpenClassrooms_Projet2
-# OpenClassrooms_Projet2
+Développement de la page d'accueil de l'agence Booki, à partir d'une maquette Figma. La problématique était principalement de respecter la maquette, et d'assurer le responsive desktop, tablette et mobile.
